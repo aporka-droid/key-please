@@ -378,6 +378,45 @@
   </style>
 
 <style id="collection-brand-mark">.collection-mark{display:block;width:34px;height:34px;flex:0 0 34px;object-fit:contain;border:0;border-radius:0;background:transparent;box-shadow:none;padding:0;margin:0}</style>
+<style>
+.please-footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  width: 100%;
+  font: inherit;
+  letter-spacing: normal;
+}
+.please-footer-nav .please-origin {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: inherit;
+  font-size: 11px;
+  font-weight: 400;
+}
+.please-footer-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+  font-size: 13px;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+.please-footer-nav a.please-wordmark {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -.6px;
+}
+.please-footer-nav a:hover,
+.please-footer-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+</style>
 </head>
 <body>
   <header><div class="brand"><img class="collection-mark" src="favicon.svg?v=20261030" width="34" height="34" alt="" aria-hidden="true">keyplease.</div></header>
@@ -404,7 +443,7 @@
         <p id="message" role="status" aria-live="polite"></p>
       </div>
     </section>
-    <footer><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Generated on your device. Never saved or sent. <a href="https://please.aporka.dev/">All Please apps</a></footer>
+    <footer><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Generated on your device. Never saved or sent. <nav class="please-footer-nav" aria-label="Footer links"><span class="please-origin">A tool from <a class="please-wordmark" href="https://please.aporka.dev/">please.</a></span><a href="https://github.com/aporka-droid/key-please">GitHub</a></nav></footer>
   <aside class="privacy-notice" id="privacy-notice" aria-labelledby="privacy-title">
     <h2 id="privacy-title">Password privacy</h2>
     <p>Passwords are generated on your device and never saved or sent.</p>
