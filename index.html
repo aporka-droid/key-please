@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Keyplease — Free Random Password Generator</title>
+  <title>Key Please — Free Random Password Generator</title>
   <meta
     name="description"
     content="Generate random passwords with Keyplease. Choose 8–40 characters, including letters, numbers and symbols. Free, browser-based, and never saved or sent."
@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://key-please-iota.vercel.app/">
   <meta
     property="og:title"
-    content="Keyplease — Free Random Password Generator"
+    content="Key Please — Free Random Password Generator"
   >
   <meta
     property="og:description"
@@ -30,7 +30,7 @@
   <meta name="twitter:card" content="summary">
   <meta
     name="twitter:title"
-    content="Keyplease — Free Random Password Generator"
+    content="Key Please — Free Random Password Generator"
   >
   <meta
     name="twitter:description"
@@ -221,13 +221,16 @@
     input[type=range] { 
       appearance: none; 
       width: 100%; 
-      background: var(--ink); 
-      height: 5px; 
-      margin: 26px 0 12px; 
+      background: transparent;
+      height: 44px;
+      margin: 6px 0 0;
       cursor: pointer; 
       border-radius: 8px; 
     }
-    input[type=range]::-webkit-slider-thumb { 
+    #length::-webkit-slider-runnable-track { height: 5px; background: var(--ink); border-radius: 8px; }
+    #length::-moz-range-track { height: 5px; background: var(--ink); border-radius: 8px; }
+    input[type=range]::-webkit-slider-thumb {
+      margin-top: -12px;
       appearance: none; 
       width: 24px; 
       height: 28px; 
@@ -342,12 +345,9 @@
         font-size: 11px;
       } 
     }
-    .privacy-notice { 
-      position: fixed; 
-      bottom: 24px;
-      right: 24px;
-      z-index: 10; 
-      width: min(350px, calc(100% - 40px)); 
+    .privacy-notice {
+      width: min(100%, 100%);
+      margin: 20px auto;
       padding: 22px; 
       background: var(--lime); 
       border: 2px solid var(--ink); 
@@ -370,13 +370,11 @@
       width: 100%;
       min-height: 42px;
     }
-    @media (max-width: 540px) { 
-      .privacy-notice { 
-        bottom: 20px;
-        right: 20px;
-      } 
-    }
+
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    .option, .privacy-notice button { min-height: 44px; }
+    footer { flex-wrap: wrap; }
+    footer a { color: inherit; }
   </style>
 
 <style id="collection-brand-mark">.collection-mark{display:block;width:34px;height:34px;flex:0 0 34px;object-fit:contain;border:0;border-radius:0;background:transparent;box-shadow:none;padding:0;margin:0}</style>
@@ -406,13 +404,13 @@
         <p id="message" role="status" aria-live="polite"></p>
       </div>
     </section>
-    <footer><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Generated on your device. Never saved or sent.</footer>
-  </main>
+    <footer><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Generated on your device. Never saved or sent. <a href="https://please.aporka.dev/">All Please apps</a></footer>
   <aside class="privacy-notice" id="privacy-notice" aria-labelledby="privacy-title">
     <h2 id="privacy-title">Your password stays yours.</h2>
     <p>Passwords are securely generated on your device. This website never saves or sends them, so you can use them for your accounts. Keep each password private and use a different one for every account.</p>
     <button class="button" id="dismiss-privacy" type="button">Got it</button>
   </aside>
+  </main>
   <script>
     document.querySelector('#dismiss-privacy').addEventListener('click', () => {
       document.querySelector('#privacy-notice').hidden = true;
